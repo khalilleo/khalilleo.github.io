@@ -187,9 +187,11 @@
 				window.location.href = "http://pythontutor.com/csc108h.html#mode=edit";
 			}
 			else if (val == 2){
-				window.location.href = "cheatsheet.pdf";
+				window.location.href = "http://www.cs.toronto.edu/~fpitt/CSC148/20131/tests/cheatsheet.pdf";
 			}
-
+			else if (val == 3){
+				window.location.href = "https://perso.limsi.fr/pointal/_media/python:cours:mementopython3-english.pdf";
+			}
 
 			var self = this;
 			this.dd.toggleClass( 'cd-active' );
