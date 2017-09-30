@@ -197,5 +197,10 @@ const data = [{
         "name": "print(s)",
         "des": "把s打印出来，返回None",
         "example": ">>> print(123)<br>123"
+    },
+    {
+        "name": "len(x)",
+        "des": " 返回x的长度，可以任何container，比如string、list、dict，返回int",
+        "example": ">>> len([1, 2, 3])<br>3"
     }
 ]
