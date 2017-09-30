@@ -31,22 +31,22 @@ const data = [{
     {
         "name": "d.get(k)",
         "des": "返回d中key k对应的value，返回None如果没有key k",
-        "example": ">>> d = {1: 'a', 2: 'b'}<br>>>> d.get(1)<br>>>> 'a'"
+        "example": ">>> d = {1: 'a', 2: 'b'}<br>>>> d.get(1)<br>'a'"
     },
     {
         "name": "d.keys()",
         "des": "返回d中所有的key，以类似list的形式",
-        "example": ">>> d = {1: 'a', 2: 'b'}<br>>>> d.keys()<br>>>> [1, 2]"
+        "example": ">>> d = {1: 'a', 2: 'b'}<br>>>> d.keys()<br>[1, 2]"
     },
     {
         "name": "d.values()",
         "des": "返回d中所有的value，以类似list的形式",
-        "example": ">>> d = {1: 'a', 2: 'b'}<br>>>> d.values()<br>>>> ['a', 'b']"
+        "example": ">>> d = {1: 'a', 2: 'b'}<br>>>> d.values()<br>['a', 'b']"
     },
     {
         "name": "d.items()",
         "des": "返回d中所有的key和value的pair，以list of tuple的形式",
-        "example": ">>> d = {1: 'a', 2: 'b'}<br>>>> d.items()<br>>>> [(1, 'a'), (2, 'b')]"
+        "example": ">>> d = {1: 'a', 2: 'b'}<br>>>> d.items()<br>[(1, 'a'), (2, 'b')]"
     },
     {
         "name": "f.close()",
@@ -91,7 +91,7 @@ const data = [{
     {
         "name": "L.index(value)",
         "des": "返回value在L中出现的第一次的index",
-        "example": ">>> L = [1, 2]<br>>>> L.index(2) <br>>>> 1"
+        "example": ">>> L = [1, 2]<br>>>> L.index(2) <br>1"
     },
     {
         "name": "L.insert(index, x)",
