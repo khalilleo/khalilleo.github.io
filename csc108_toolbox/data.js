@@ -10,7 +10,7 @@ const data = [{
     },
     {
         "name": "chr(i)",
-        "des": "返回在计算机字典里i位置对应的字符，返回number",
+        "des": "返回在计算机字典里i位置对应的字符，返回string",
         "example": ">>> chr(97)<br>'a'"
     },
     {
