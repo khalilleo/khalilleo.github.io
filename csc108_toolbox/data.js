@@ -181,7 +181,7 @@ const data = [{
     {
         "name": "s.split(separator)",
         "des": "返回一个list，把原来s根据separator进行分割",
-        "example": ">>> 'haha,haha,123'.split(',')<br>['haha', 'haha', '123']"
+        "example": ">>> s = 'haha,haha,123'<br>>>> s.split(',')<br>['haha', 'haha', '123']"
     },
     {
         "name": "s.startswith(x)",
@@ -190,7 +190,7 @@ const data = [{
     },
     {
         "name": "s.strip(char)",
-        "des": "返回一个新的s，把原来s左右所有的char都去掉；如果char不写，那么把左右所有的空格都去掉",
+        "des": "返回一个新的s，把原来s左右所有的char都去掉；如果char不写，那么把左右所有的空格和\n都去掉",
         "example": ">>> '   abB   '.lstrip()<br>'abB'"
     },
     {
