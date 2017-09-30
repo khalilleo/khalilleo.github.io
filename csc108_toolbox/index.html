@@ -60,10 +60,10 @@
             if (keyword.length == 0){
                 return;
             }
-            console.log(data);
+            //console.log(data);
             let result = [];
             data.forEach(function(i) {
-                if (i.name.toLowerCase().indexOf(keyword.toLowerCase()) != -1 || 
+                if (i.name.toLowerCase().indexOf(keyword.toLowerCase()) != -1 ||
                     i.des.toLowerCase().indexOf(keyword.toLowerCase()) != -1) {
                     result.push(i);
                 }
@@ -140,6 +140,10 @@
                     </section>
                 </section>
             </article>
+        </div>
+        <br>
+        <div class="page__bd page__bd_spacing">
+            <a href="https://repl.it/languages/python3" class="weui-btn weui-btn_primary">运行Python</a>
         </div>
     </div>
     <!-- / content -->
