@@ -160,7 +160,7 @@ const data = [{
     },
     {
         "name": "s.upper()",
-        "des": "返回s的小写形式",
+        "des": "返回s的大写形式",
         "example": ">>> 'abB'.upper()<br>'ABB'"
     },
     {
