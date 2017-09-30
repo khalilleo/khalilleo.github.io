@@ -200,7 +200,47 @@ const data = [{
     },
     {
         "name": "len(x)",
-        "des": " 返回x的长度，可以任何container，比如string、list、dict，返回int",
+        "des": "返回x的长度，可以任何container，比如string、list、dict，返回int",
         "example": ">>> len([1, 2, 3])<br>3"
+    },
+    {
+        "name": "s.isalnum()",
+        "des": "返回True iff s都是字母或数字，而且不是空的string，返回bool",
+        "example": ">>> '12s'.isalnum()<br>True"
+    },
+    {
+        "name": "s.isspace()",
+        "des": "返回True iff s都是空格，而且不是空的string，返回bool",
+        "example": ">>> '   a'.isspace()<br>False"
+    },
+    {
+        "name": "s.join(x)",
+        "des": "将x（可以是str也可以是list of str）中所有的元素合并成一个string, 每个元素之间用s隔开，返回string",
+        "example": ">>> ','.join('abc')<br>'a,b,c'<br>>>> '-'.join(['a', 'b'])<br>'a-b'"
+    },
+    {
+        "name": "L.clear()",
+        "des": "将list L中所有的元素删除，返回None",
+        "example": ">>> L = [1, 2]<br>>>> L.clear() <br>>>> print(L)<br>[]"
+    },
+    {
+        "name": "L.clear()",
+        "des": "将list L中所有的元素删除，返回None",
+        "example": ">>> L = [1, 2]<br>>>> L.clear() <br>>>> print(L)<br>[]"
+    },
+    {
+        "name": "L.copy()",
+        "des": "返回一个list L的copy",
+        "example": ">>> L = [1, 2]<br>>>> L2 = L.copy() <br>>>> print(L2)<br>[1, 2]"
+    },
+    {
+        "name": "L.copy()",
+        "des": "返回一个list L的copy",
+        "example": ">>> L = [1, 2]<br>>>> L2 = L.copy() <br>>>> print(L2)<br>[1, 2]"
+    },
+    {
+        "name": "d.update(d2)",
+        "des": "将d2中的内容合并/覆盖到d，return None",
+        "example": ">>> d = {1: 1}<br>>>> d2 = {2: 2} <br>>>> d.update(d2)<br>>>> print(d)<br>{1: 1, 2: 2}"
     }
 ]
