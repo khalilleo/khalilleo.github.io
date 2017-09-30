@@ -1,46 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>AVANTCLASS CSC108 TOOLBOX</title>
-		<meta name="description" content="Simple Effects for Drop-Down Lists" />
-		<meta name="keywords" content="drop-down, select, jquery, plugin, fallback, transition, transform, 3d, css3" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico"> 
-		<link rel="stylesheet" type="text/css" href="css/style4.css" />
-		<script src="js/modernizr.custom.63321.js"></script>
-	</head>
-	<body>
-		<div class="container">	
-			<!-- Codrops top bar -->
-			<section class="main clearfix">
-				<center>
-					<select id="cd-dropdown" class="cd-select">
-						<option value="-1" selected>请选择工具</option>
-						<option value="1" class="icon-tux">Visualizer</option>
-						<option value="2" class="icon-finder">Python3 Cheatsheet 简化版</option>
-						<option value="3" class="icon-clock">Python3 Cheatsheet 完整版</option>
-					</select>
-				</center>
-				</div>
-			</section>
-		</div><!-- /container -->
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery.dropdown.js"></script>
-		<script type="text/javascript">
-			
-			$( function() {
-				
-				$( '#cd-dropdown' ).dropdown();
 
-			});
+<head>
+    <meta charset="utf-8" />
+    <title>CSC108 Python大宝典</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://api.xiaoduo.ca/static/css/example.css" type="text/css" />
+    <link rel="stylesheet" href="https://api.xiaoduo.ca/static/css/weui.css" type="text/css" />
+    <script src="https://api.xiaoduo.ca/static/js/weui.min.js"></script>
+    <script src="https://api.xiaoduo.ca/static/js/jquery.min.js"></script>
+    <script src="data.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var $searchBar = $('#searchBar'),
+            $searchResult = $('#searchResult'),
+            $searchText = $('#searchText'),
+            $searchInput = $('#searchInput'),
+            $searchClear = $('#searchClear'),
+            $searchCancel = $('#searchCancel');
 
-		</script>
-	</body>
-	<footer align="middle">
-	<small><p>此工具箱仅供AvantClass CSC108学生使用</p></small>
-	 <small><p>© Copyright 2016, AVANTCLASS & KHALIL LU</p></small>
-	</footer>
+        function hideSearchResult() {
+            $searchResult.hide();
+            $searchInput.val('');
+        }
+
+        function cancelSearch() {
+            hideSearchResult();
+            $searchBar.removeClass('weui-search-bar_focusing');
+            $searchText.show();
+        }
+
+        $searchText.on('click', function() {
+            $searchBar.addClass('weui-search-bar_focusing');
+            $searchInput.focus();
+        });
+        $searchInput
+            .on('blur', function() {
+                if (!this.value.length) cancelSearch();
+            })
+            .on('input', function() {
+                if (this.value.length) {
+                    searchKeyword(this.value);
+                    $searchResult.show();
+                } else {
+                    $searchResult.hide();
+                }
+            });
+        $searchClear.on('click', function() {
+            hideSearchResult();
+            $searchInput.focus();
+
+        });
+        $searchCancel.on('click', function() {
+            cancelSearch();
+            $searchInput.blur();
+        });
+
+        function searchKeyword(keyword) {
+            if (keyword.length == 0){
+                return;
+            }
+            console.log(data);
+            let result = [];
+            data.forEach(function(i) {
+                if (i.name.toLowerCase().indexOf(keyword.toLowerCase()) != -1 || 
+                    i.des.toLowerCase().indexOf(keyword.toLowerCase()) != -1) {
+                    result.push(i);
+                }
+            });
+            html = "";
+            if (result.length == 0) {
+                html += '<div class="weui-cell weui-cell_access"><div class="weui-cell__bd">';
+                html += '<a style="color:black;" href="javascript:">没有结果</a>';
+                html += '</div></div>';
+                $searchResult.html(html);
+                return;
+            }
+            for (var i = result.length - 1; i >= 0; i--) {
+                html += '<div class="weui-cell weui-cell_access" onclick="' + "javascript:getResult('" + result[i].name + "')" + '"><div class="weui-cell__bd">';
+                html += '<a style="color:black;" href="' + "javascript:getResult('" + result[i].name + "')" + '">' + result[i].name + '</a>';
+                html += '</div></div>';
+            }
+            $searchResult.html(html);
+        }
+
+
+    });
+
+    function getResult(keyword) {
+        data.forEach(function(i) {
+            if (i.name.toLowerCase() == keyword.toLowerCase()) {
+                $("#keyword_name").html(i.name);
+                $("#description").html(i.des);
+                $("#example").html(i.example);
+                $("#content").show();
+                $("#searchResult").hide();
+                return;
+            }
+        });
+    }
+    </script>
+</head>
+
+<body>
+    <div class="page__hd">
+        <h1 class="page__title">CSC108 Python大宝典</h1>
+        <p class="page__desc">搜索function、method名即可查看用法和example</p>
+    </div>
+    <div class="page__bd">
+        <div class="weui-search-bar" id="searchBar">
+            <form class="weui-search-bar__form">
+                <div class="weui-search-bar__box">
+                    <i class="weui-icon-search"></i>
+                    <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+                    <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                </div>
+                <label class="weui-search-bar__label" id="searchText">
+                    <i class="weui-icon-search"></i>
+                    <span>搜索</span>
+                </label>
+            </form>
+            <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+        </div>
+        <div class="weui-cells searchbar-result" id="searchResult" style="display: none">
+        </div>
+        <div id='content' style="display: none">
+            <article class="weui-article">
+                <h1 id='keyword_name'>大标题</h1>
+                <section>
+                    <h2>用法</h2>
+                    <section>
+                        <div id='description'>
+                        </div>
+                    </section>
+                    <h2>例子</h2>
+                    <section>
+                        <div id='example'>
+                        </div>
+                    </section>
+                </section>
+            </article>
+        </div>
+    </div>
+    <!-- / content -->
+    <div class="page__bd page__bd_spacing">
+        <div class="weui-footer">
+            <br>
+            <p class="weui-footer__text">Copyright © 2017 Khalil@小多课程表</p>
+        </div>
+        <br>
+        <br>
+    </div>
+</body>
+
 </html>
