@@ -1,0 +1,5 @@
+#!/bin/bash
+while read oldrev newrev ref
+do
+    git --work-tree=/var/www/html --git-dir=/root/proj checkout -f
+done
