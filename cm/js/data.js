@@ -54,7 +54,7 @@ function getData() {
     return;
   }
   //console.log(shareId);
-  data = [ [ "20" ], [ "2018", "哈哈哈" ], [ "20", "24" ], [ "40", "20" ], [ "90" ], [ "哈哈哈" ], [ "level-plat", "badget-dawei", "badget-danshen", 'badget-huaxue'], ['Khalil']];
+  data = [ [ "20" ], [ "2018", "猫头鹰" ], [ "$200", "24%" ], [ "40", "20%" ], [ "90" ], [ "5508" ], [ "level-plat", "badget-dawei", "badget-danshen", 'badget-huaxue'], ['Khalil']];
   fillData(data);
 
   return;
