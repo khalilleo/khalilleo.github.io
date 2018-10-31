@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css">
+  <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.4/weui.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script>
+    function jumpToUrl() {
+      window.location.replace('https://1111.tmall.com/?wh_weex=true&wh_biz=tm&wx_main_hc=true&scm=20140651.799.9.1');
+    }
+
+    $(function() {
+      $("#link1").click(function() {
+        jumpToUrl();
+      });
+      $("#link2").click(function() {
+        jumpToUrl();
+      });
+    });
+  </script>
+  <title>title</title>
+  <style>
+    body {
+      margin: 0 !important;
+    }
+
+    .content {
+      font-size: 0;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <img class='image' src="img/1.png" />
+    <img class='image' id='link1' src="img/2.png" />
+    <img class='image' src="img/3.png" />
+    <img class='image' id='link2' src="img/4.png" />
+  </div>
+
+
+</body>
+
+</html>
